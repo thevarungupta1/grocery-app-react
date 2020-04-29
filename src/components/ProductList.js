@@ -11,7 +11,7 @@ class ProductList extends Component {
     }
 
     componentDidMount(){
-        axios.get('https://apolis-grocery.herokuapp.com/api/products/sub/1')
+        axios.get(`https://apolis-grocery.herokuapp.com/api/products/cat/${this.props.match.params.id}`)
         .then(response => {
             console.log(response)
             this.setState({
@@ -24,10 +24,11 @@ class ProductList extends Component {
     }
     render() { 
         const {products} = this.state
-        const url = "https://apolis-grocery.herokuapp.com/api/subcategory/1"
-        const url2  = "https://apolis-grocery.herokuapp.com/api/products/sub/1"
+        const { id } = this.props.match.params;
         return ( 
-            <div className="row">
+            <div>
+                <h1>{ `${id}`}</h1>
+                <div className="row">
                 
                 {
                     products.length ?
@@ -36,6 +37,8 @@ class ProductList extends Component {
                     'No Product found'
                 }
             </div>
+            </div>
+            
          );
     }
 }

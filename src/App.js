@@ -9,7 +9,8 @@ import Sidebar from './components/shared/Sidebar';
 import CategoryList from './components/CategoryList';
 import Footer from './components/shared/Footer';
 import ProductList from './components/ProductList';
-import { Route } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
+import NotFound from './components/NotFound';
 
 
 
@@ -24,10 +25,14 @@ function App() {
           <Sidebar />
         </div>
         <div className="col-lg-9">
-          <Route path="/" exact component={CategoryList}/>  
-          <Route path="/category" component={CategoryList}/>
-          <Route path="/products" component={ProductList}/>
-          <Route path="/products/new" exact component={ProductList}/>
+          <Switch>
+            <Route path="/category" component={CategoryList}/>
+            <Route path="/products/:id" component={ProductList}/>
+            <Route path="not-found" component={NotFound} />
+            <Route path="/"  component={CategoryList}/>  
+            <Redirect to="/not-found"/>
+          </Switch>
+          
         </div>
       </div>
       <Footer />

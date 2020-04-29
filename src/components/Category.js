@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Category extends Component {
     render() { 
@@ -11,7 +12,7 @@ class Category extends Component {
                             <h5 className="card-title">{category.catName}</h5>
                             <img src={`http://rjtmobile.com/grocery/images/${category.catImage}`} width="200" className="img-responsive" />
                             <br/>
-                            <a href="#" className="btn btn-outline-primary btn-block">Buy</a>
+                            <Link to={'/products/'+ category.catId} className="btn btn-outline-primary btn-block">Buy</Link>
                         </div>
                     </div>
                 </div>
