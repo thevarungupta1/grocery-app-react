@@ -8,6 +8,7 @@ import Header from './components/shared/Header';
 import Sidebar from './components/shared/Sidebar';
 import CategoryList from './components/CategoryList';
 import Footer from './components/shared/Footer';
+import ProductList from './components/ProductList';
 
 
 
@@ -22,6 +23,7 @@ function App() {
         </div>
         <div className="col-lg-9">
           <CategoryList />
+          <ProductList />
         </div>
       </div>
       <Footer />
