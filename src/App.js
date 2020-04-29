@@ -11,31 +11,14 @@ import Footer from './components/shared/Footer';
 import ProductList from './components/ProductList';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import NotFound from './components/NotFound';
-
+import LifeCycleDemo from './components/Lifecycle/LifeCycleDemo';
 
 
 function App() {
   return (
     <div>
-      
-  <Navbar />
-      <Header />
-      <div className="row">
-        <div className="col-lg-3">
-          <Sidebar />
-        </div>
-        <div className="col-lg-9">
-          <Switch>
-            <Route path="/category" component={CategoryList}/>
-            <Route path="/products/:id" component={ProductList}/>
-            <Route path="not-found" component={NotFound} />
-            <Route path="/"  component={CategoryList}/>  
-            <Redirect to="/not-found"/>
-          </Switch>
-          
-        </div>
-      </div>
-      <Footer />
+      <LifeCycleDemo />
+  
     </div>
   );
 }
