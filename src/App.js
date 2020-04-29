@@ -9,21 +9,25 @@ import Sidebar from './components/shared/Sidebar';
 import CategoryList from './components/CategoryList';
 import Footer from './components/shared/Footer';
 import ProductList from './components/ProductList';
+import { Route } from 'react-router-dom';
 
 
 
 function App() {
   return (
     <div>
-      <Navbar />
+      
+  <Navbar />
       <Header />
       <div className="row">
         <div className="col-lg-3">
           <Sidebar />
         </div>
         <div className="col-lg-9">
-          <CategoryList />
-          <ProductList />
+          <Route path="/" exact component={CategoryList}/>  
+          <Route path="/category" component={CategoryList}/>
+          <Route path="/products" component={ProductList}/>
+          <Route path="/products/new" exact component={ProductList}/>
         </div>
       </div>
       <Footer />
