@@ -1,5 +1,11 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## API Document
+https://apolis-grocery.herokuapp.com/api-docs/
+
+## Image URL
+http://rjtmobile.com/grocery/images/
+
 ## Available Scripts
 
 In the project directory, you can run:
